@@ -1,3 +1,4 @@
+import router from '@ohos.router';
 import { CommonTopBar } from '../component/CommonTopBar';
 import { NewsModelListData } from '../model/NewsModel';
 import newsViewModel from '../viewmodel/NewsViewModel';
@@ -63,7 +64,7 @@ export struct NewsPage {
                     .width("100%")
                     .maxLines(3)
                     .fontWeight(400)
-                    .textOverflow({ overflow: TextOverflow.Ellipsis })
+                    .textOverflow({ overflow: TextOverflow.Clip })
                 }
                 .clip(true)
                 .width("100%")
@@ -77,6 +78,14 @@ export struct NewsPage {
                   .width("100%")
                   .margin({ top: "8vp" })
               }
+              .onClick(() => {
+                router.pushUrl({
+                  url: "pages/NewsDetailPage",
+                  params: {
+                    "url": item.mobilUrl,
+                  }
+                })
+              })
             }
 
           }, item => item.index)

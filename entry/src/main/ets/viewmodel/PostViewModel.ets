@@ -1,4 +1,6 @@
-import { doFavourByIdAxios, doThumbByIdAxios, getPostByIdAxios, getPostListAxios } from '../apis/PostApi'
+import { doFavourByIdAxios, doThumbByIdAxios, getPostByIdAxios, getPostListAxios,
+  selectPostByTitleOrContentAxios
+} from '../apis/PostApi'
 import { BaseViewModel, ResultCallback } from './BaseViewModel'
 
 export class PostViewModel extends BaseViewModel{
@@ -39,6 +41,15 @@ export class PostViewModel extends BaseViewModel{
    */
   async doFavourById(postId: string, resultCallback?: ResultCallback) {
     await this.httpRequest().promise(doFavourByIdAxios(postId).then(result => {
+      resultCallback?.(result)
+    }),true)
+  }
+
+  /**
+   * 根据帖子标题或内容查询
+   */
+  async selectPostByTitleOrContent(titleOrContent: string, resultCallback?: ResultCallback) {
+    await this.httpRequest().promise(selectPostByTitleOrContentAxios(titleOrContent).then(result => {
       resultCallback?.(result)
     }),true)
   }

@@ -1,10 +1,12 @@
+import { MinePage } from './MinePage';
 import { NewsPage } from './NewsPage';
+import { NotifyPage } from './NotifyPage';
 import { PostPage } from './PostPage';
-import { UserProfilePage } from './UserProfilePage';
+import { SearchPage } from './SearchPage';
 
 @Entry
 @Component
-struct TabsExample {
+struct MainPage {
   @State currentIndex: number = 0;
   private tabsController: TabsController = new TabsController();
 
@@ -29,28 +31,27 @@ struct TabsExample {
       TabContent() {
         NewsPage();
       }
-      .tabBar(this.TabBuilder('新闻', 0, $r('app.media.icon_sel_home'), $r('app.media.icon_unsel_home')))
+      .tabBar(this.TabBuilder('新闻', 0, $r('app.media.ic_news_c'), $r('app.media.ic_news')))
 
       TabContent() {
         PostPage();
       }
-      .tabBar(this.TabBuilder('社交', 1, $r('app.media.icon_sel_mine'), $r('app.media.icon_unsel_mine')))
+      .tabBar(this.TabBuilder('社交', 1, $r('app.media.ic_post_c'), $r('app.media.ic_post')))
 
       TabContent() {
-        //Column().width('100%').height('100%').backgroundColor('#007DFF')
+        NotifyPage();
       }
-      .tabBar(this.TabBuilder('通知', 2, $r('app.media.icon_sel_mine'), $r('app.media.icon_unsel_mine')))
+      .tabBar(this.TabBuilder('通知', 2, $r('app.media.ic_notify_c'), $r('app.media.ic_notify')))
 
       TabContent() {
-        //Column().width('100%').height('100%').backgroundColor('#007DFF')
+        SearchPage();
       }
-      .tabBar(this.TabBuilder('搜索', 3, $r('app.media.icon_sel_mine'), $r('app.media.icon_unsel_mine')))
+      .tabBar(this.TabBuilder('搜索', 3, $r('app.media.ic_search_c'), $r('app.media.ic_search')))
 
       TabContent() {
-        //Column().width('100%').height('100%').backgroundColor('#007DFF')
-        UserProfilePage()
+        MinePage();
       }
-      .tabBar(this.TabBuilder('我的', 4, $r('app.media.icon_sel_mine'), $r('app.media.icon_unsel_mine')))
+      .tabBar(this.TabBuilder('我的', 4, $r('app.media.ic_mine_c'), $r('app.media.ic_mine')))
     }
     .barWidth('100%')
     .barHeight(50)

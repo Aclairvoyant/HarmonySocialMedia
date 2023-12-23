@@ -27,10 +27,7 @@ export struct PostPage {
     Column() {
       CommonTopBar({ title: "帖子", backButton: false, alpha: 1 }).align(Alignment.TopStart)
       Row() {
-        // Text("帖子分享")
-        //   .fontWeight(FontWeight.Bold)
-        //   .fontColor(Color.Black)
-        //   .fontSize(30)
+
       }
       .width("100%")
       .height(30)

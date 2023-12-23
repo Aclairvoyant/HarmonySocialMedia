@@ -4,6 +4,11 @@
     "pages/MainPage",
     "pages/PostPage",
     "pages/PostDetailPage",
-    "pages/RegisterPage"
+    "pages/RegisterPage",
+    "pages/MinePage",
+    "pages/NewsDetailPage",
+    "pages/NewsPage",
+    "pages/NotifyPage",
+    "pages/SearchPage"
   ]
 }

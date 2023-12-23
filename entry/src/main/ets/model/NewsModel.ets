@@ -5,6 +5,7 @@ export interface NewsModelListData {
   pic: string;
   hot: number;
   url: string;
+  mobilUrl: string;
 }
 
 export interface NewsModel {

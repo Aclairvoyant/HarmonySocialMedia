@@ -42,3 +42,13 @@ export function doFavourByIdAxios(postId: string) {
   })
   return result;
 }
+
+export function selectPostByTitleOrContentAxios(value: string) {
+  const result = axiosClient.get<PostModelList>({
+    url: baseURL + "getByTitleOrContent",
+    params: {
+      "titleOrContent": value
+    }
+  })
+  return result;
+}

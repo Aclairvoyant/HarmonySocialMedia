@@ -1,0 +1,13 @@
+{
+  "license": "",
+  "devDependencies": {
+    "@ohos/hypium": "1.0.11",
+    "@ohos/axios": "^2.1.0"
+  },
+  "author": "",
+  "name": "socialmedia",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "version": "1.0.0",
+  "dependencies": {}
+}

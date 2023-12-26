@@ -89,7 +89,7 @@ export struct CommonTopBar {
       }
       .height($r('app.float.size_50'))
       .width("100%")
-    }.height(this.statusBarHeight)
+    }//.height(this.statusBarHeight)
 
   }
 }

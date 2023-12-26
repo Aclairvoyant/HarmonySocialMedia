@@ -16,6 +16,7 @@ export class LoginViewModel extends BaseViewModel {
       let code = result.code;
       if (code == CommonConstant.SUCCESS_CODE) {
         console.log("登录成功");
+        showToast("登录成功")
         router.pushUrl({
           url: "pages/MainPage"
         })

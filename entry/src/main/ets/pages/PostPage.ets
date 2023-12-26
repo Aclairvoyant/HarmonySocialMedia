@@ -80,7 +80,6 @@ export struct PostPage {
           this.isRefreshing = false;
         }, 500)
       })
-      .padding({ left: 10, right: 10 })
     }
   }
 }

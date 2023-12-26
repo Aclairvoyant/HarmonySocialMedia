@@ -1,7 +1,7 @@
 import axiosClient from '../http/AxiosRequest';
 import { PostFavourModel, PostModelDetail, PostModelList, PostThumbModel } from '../model/PostModel';
 
-let baseURL = "http://localhost:8081/api/post/";
+let baseURL = "http://127.0.0.1:8081/api/post/";
 
 export function getPostListAxios() {
   const result = axiosClient.get<PostModelList>({
@@ -48,6 +48,18 @@ export function selectPostByTitleOrContentAxios(value: string) {
     url: baseURL + "getByTitleOrContent",
     params: {
       "titleOrContent": value
+    }
+  })
+  return result;
+}
+
+export function addPostAxios(title: string, content: string) {
+  const result = axiosClient.post({
+    url: baseURL + "add",
+    data: {
+      "title": title,
+      "content": content,
+      "tags": []
     }
   })
   return result;

@@ -1,8 +1,4 @@
 import router from '@ohos.router';
-import promptAction from '@ohos.promptAction';
-import http from '@ohos.net.http';
-import axios, { AxiosResponse } from '@ohos/axios';
-import { CommonConstant } from '../constants/CommonConstant';
 import loginViewModel from '../viewmodel/LoginViewModel';
 import { UserModel } from '../model/UserModel';
 

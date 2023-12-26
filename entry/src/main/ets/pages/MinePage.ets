@@ -1,7 +1,3 @@
-/**
- * 我的页面
- */
-import Router from '@system.router';
 import router from '@ohos.router';
 import { CommonDialog } from '../component/CommonDialog';
 
@@ -26,7 +22,7 @@ export struct MinePage {
     Scroll() {
       Column() {
         Column() {
-          Image($r('app.media.ic_fire'))
+          Image($r('app.media.ic_avatar'))
             .height($r('app.float.size_70'))
             .width($r('app.float.size_70'))
             .border({ radius: $r('app.float.size_35') })
@@ -40,6 +36,12 @@ export struct MinePage {
         .height($r('app.float.size_250'))
         .justifyContent(FlexAlign.Center)
         .alignItems(HorizontalAlign.Center)
+
+        this.itemBuilder("发布", $r('app.media.ic_add'), () => {
+          router.pushUrl({
+            url: "pages/AddPostPage"
+          })
+        })
 
         this.itemBuilder("新闻", $r('app.media.ic_news'), () => {
           router.pushUrl({

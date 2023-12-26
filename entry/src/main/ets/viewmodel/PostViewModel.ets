@@ -1,7 +1,12 @@
-import { doFavourByIdAxios, doThumbByIdAxios, getPostByIdAxios, getPostListAxios,
+import {
+  addPostAxios,
+  doFavourByIdAxios, doThumbByIdAxios, getPostByIdAxios, getPostListAxios,
   selectPostByTitleOrContentAxios
 } from '../apis/PostApi'
+import { CommonConstant } from '../constants/CommonConstant'
+import showToast from '../utils/ToastUtil'
 import { BaseViewModel, ResultCallback } from './BaseViewModel'
+import router from '@ohos.router'
 
 export class PostViewModel extends BaseViewModel{
 
@@ -52,6 +57,19 @@ export class PostViewModel extends BaseViewModel{
     await this.httpRequest().promise(selectPostByTitleOrContentAxios(titleOrContent).then(result => {
       resultCallback?.(result)
     }),true)
+  }
+
+  /**
+   * 发布帖子
+   */
+  async addPost(title: string, content: string) {
+    await this.httpRequest().promise(addPostAxios(title, content).then(result => {
+      if (result.code == CommonConstant.SUCCESS_CODE) {
+        showToast("发布成功");
+      } else {
+        showToast(result.message);
+      }
+    }), true)
   }
 }
 

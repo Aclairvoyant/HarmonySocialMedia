@@ -9,6 +9,7 @@
     "pages/NewsDetailPage",
     "pages/NewsPage",
     "pages/NotifyPage",
-    "pages/SearchPage"
+    "pages/SearchPage",
+    "pages/AddPostPage"
   ]
 }

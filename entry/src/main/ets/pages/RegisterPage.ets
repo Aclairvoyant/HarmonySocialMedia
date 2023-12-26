@@ -56,6 +56,14 @@ export struct RegisterPage {
         .width("200vp")
         .offset({ x: "0vp", y: "70vp" })
         .onClick(() => {
+          if (this.userRegisterModel.userAccount == "") {
+            showToast("请输入用户名！");
+            return;
+          }
+          if (this.userRegisterModel.userPassword == "" || this.userRegisterModel.checkPassword == "") {
+            showToast("请输入密码！");
+            return;
+          }
           if (this.userRegisterModel.userPassword === this.userRegisterModel.checkPassword) {
             loginViewModel.postRegister(this.userRegisterModel)
           } else {

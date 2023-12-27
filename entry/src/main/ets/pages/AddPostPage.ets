@@ -62,7 +62,7 @@ export struct AddPostPage {
           .fontSize("16fp")
           .height("40vp")
           .width("200vp")
-          .margin({ bottom: "20vp" })
+          .margin({ bottom: "100vp" })
           .onClick(() => this.uploadNewsData())
       }
       .padding({

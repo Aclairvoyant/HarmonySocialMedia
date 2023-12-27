@@ -26,12 +26,12 @@ export struct PostPage {
   build() {
     Column() {
       CommonTopBar({ title: "帖子", backButton: false, alpha: 1 }).align(Alignment.TopStart)
-      Row() {
-
-      }
-      .width("100%")
-      .height(30)
-      .margin({ bottom: 20 })
+      // Row() {
+      //
+      // }
+      // .width("100%")
+      // .height(30)
+      // .margin({ bottom: 20 })
 
       Refresh({ refreshing: $$this.isRefreshing, offset: 120, friction: 100 }) {
         List({ space: 20 }) {
